@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gadgets4U | Peterborough</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+    header {
+        background-color: black;
+        color: white;
+        position: fixed;
+        width: 100%;
+        left: 0;
+        top: 0;
+        font-family: Bebas Neue;
+        display: block;
+        font-size: 18px;
+    }
+    body {
+        background-color: #333333;
+        color: white;
+    }
+    footer {
+        background-color: black;
+        color: white;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        font-family: Bebas Neue;
+    }
+    img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .menu {
+        width: 20%;
+        height: 500px;
+        position: fixed;
+        left: 0px;
+        top: 0px;
+    }
+    .menu a {
+        background-color: black;
+        color: white;
+        display: block;
+        padding: 12px;
+        text-decoration: none;
+        font-family: Bebas Neue;
+        font-size: 32px;
+    }
+    .menu a:hover {
+        background-color: #808080;
+    }
+    .menu a.active {
+        background-color: #595959;
+        color: white;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    .slider:before {
+        position: absolute;
+        content: '';
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    input:checked + .slider {
+        background-color: #0AB73E;
+    }
+    input:focus + .slider {
+        box-shadow: 0 0 1px;
+        }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+    .slider.round {
+        border-radius: 34px;
+    }
+    .slider.round:before {
+        border-radius: 50%;
+    }
+</style>
+
+</head>
+
+<header>
+    <h1 align='center'>Gadgets4U</h1>
+</header>
+
+<body>
+    <div class='menu'>
+        <img src='G4U.png'>
+        <a href='' class='active'>Dashboard</a>
+        <a href=''>Orders</a>
+        <a href=''>Suppliers</a>
+        <a href=''>Stock</a>
+        <a href=''>Purchases</a>
+        <a>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>    Dark Mode
+        </a>
+    </div>
+</body>
+
+<footer>
+    <p align='center'>2022 © Gadgets4U</p>
+</footer>
+
+</html>
