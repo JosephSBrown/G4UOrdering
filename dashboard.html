@@ -25,9 +25,10 @@
         font-family: Bebas Neue;
         display: block;
         font-size: 18px;
+        text-align: center;
     }
     body {
-        background-color: #white;
+        background-color: white;
         color: black;
         height: 100%;
         width: 100%;
@@ -40,6 +41,7 @@
         bottom: 0;
         width: 100%;
         font-family: Bebas Neue;
+        text-align: right;
     }
     img {
         max-height: 100%;
@@ -122,17 +124,34 @@
         background-color: #333333;
         color: white;
     }
+    .title {
+        display: inline-block;
+        font-size: 36px;
+        padding-top: 5px;
+    }
+    .account {
+        float: right;
+        display: inline-block;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .notif {
+        float: right;
+        display: inline-block;
+        padding: 5px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 </style>
 
 </head>
 
 <header>
     <div>
-        <h1 align='center'>Gadgets4U</h1>
-        <div align='right'>
-            <h1><i class="far fa-bell"></i></h1>
-            <h1><i class="fas fa-user"></i></h1>
-        </div>
+        <div class='title'>Gadgets4U</div>
+        <div class='account'><i class="fas fa-user fa-2x"></i></div>
+        <div class='notif'><i class="far fa-bell fa-2x"></i></div>
     </div>
 </header>
 
@@ -155,7 +174,7 @@
 </body>
 
 <footer id="footer">
-    <p align='center'>2022 © Gadgets4U</p>
+    <p style="padding-right: 15px; font-size: 18px;">2022 © Gadgets4U | By Arclight Developments</p>
 </footer>
 
 <script>
