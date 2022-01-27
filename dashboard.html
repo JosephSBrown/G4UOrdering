@@ -30,8 +30,6 @@
     body {
         background-color: white;
         color: black;
-        height: 100%;
-        width: 100%;
     }
     footer {
         background-color: black;
@@ -42,6 +40,7 @@
         width: 100%;
         font-family: Bebas Neue;
         text-align: right;
+        height: 55px;
     }
     img {
         max-height: 100%;
@@ -57,7 +56,7 @@
     .menu {
         width: 17%;
         height: 100%;
-        position: fixed;
+        position: absolute;
         left: 0px;
         top: 0px;
         background-color: black;
@@ -163,6 +162,15 @@
     .notif:hover {
         background-color: #808080;
     }
+    .notif .badge {
+        position: absolute;
+        top: 5px;
+        right: 65px;
+        padding: 1px 8px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+    }
     .account:hover {
         background-color: #808080;
     }
@@ -178,6 +186,7 @@
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
+        background-color: white;
     }
     .userdropcontent a:hover {
         background-color: #808080;
@@ -199,11 +208,13 @@
     .notifdropcontent {
         display: none;
         position: absolute;
-        right: 55px;
+        right: 58px;
         top: 50px;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
+        z-index: -1;
+        float: right;
+        background-color: white;
     }
     .notifdropcontent a {
         color: black;
@@ -217,6 +228,41 @@
     }
     .notifshow {
         display: block;
+    }
+    .maincontainer {
+        float: left;
+        overflow: auto;
+        width: 83%;
+    }
+    .pagetitle {
+        width: 100%;
+        margin-top: 50px;
+        height: 50px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .col1 {
+        width: 27%;
+        background-color: blue;
+        float: right;
+        height: 100%;
+        box-sizing: border-box;
+        border: 1px solid blue;
+    }
+    .col2 {
+        width: 27%;
+        height: 100%;
+        box-sizing: border-box;
+        float: right;
+        border: 1px solid black;
+    }
+    .col3 {
+        width: 27%;
+        background-color: red;
+        float: right;
+        height: 100%;
+        box-sizing: border-box;
+        border: 1px solid red;
     }
 
     @media only screen and (max-width: 800px) {
@@ -241,10 +287,10 @@
             <div id='userdrop' class='userdropcontent'>
                 <a>StaffID: </a>
                 <a href=''>Account</a>
-                <a href=''>Log Out</a>
+                <a href='login.html'>Log Out</a>
             </div>
         </div>
-        <div class='notif' onclick="notifclick()"><i class="far fa-bell fa-2x"></i>
+        <div class='notif' onclick="notifclick()"><span class="badge">3</span><i class="far fa-bell fa-2x"></i>
             <div id='notifdrop' class='notifdropcontent'>
                 <a href=''>Notification 1</a>
                 <a href=''>Notification 2</a>
@@ -270,6 +316,20 @@
             </label> Dark Mode
         </a>
     </div>
+    <div class="maincontainer">
+        <div class="pagetitle">
+            text
+        </div>
+        <div class="col1">
+            text
+        </div>
+        <div class="col2">
+            text
+        </div>
+        <div class="col3">
+            text
+        </div>
+    </div>
 </body>
 
 <footer id="footer">
@@ -287,18 +347,7 @@
     function notifclick() {
     document.getElementById("notifdrop").classList.toggle("notifshow");
     }
-    window.onclick = function(event) {
-        if (!event.target.matches('.account')) {
-            var dropdowns = document.getElementsByClassName("userdropcontent");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
+
 </script>
 
 </html>
