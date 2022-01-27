@@ -47,12 +47,20 @@
         max-height: 100%;
         max-width: 100%;
     }
+    .burgermenu {
+        display: inline-block;
+        float: left;
+        padding: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .menu {
         width: 17%;
-        max-height: 100%;
+        height: 100%;
         position: fixed;
         left: 0px;
         top: 0px;
+        background-color: black;
     }
     .menu a {
         background-color: black;
@@ -124,6 +132,10 @@
         background-color: #333333;
         color: white;
     }
+    .menu-show {
+        display: block;
+        width: 80%;
+    }
     .title {
         display: inline-block;
         font-size: 36px;
@@ -146,6 +158,13 @@
         padding: 5px;
         padding-right: 15px;
         padding-left: 15px;
+        cursor: pointer;
+    }
+    .notif:hover {
+        background-color: #808080;
+    }
+    .account:hover {
+        background-color: #808080;
     }
     .userdrop {
         position: relative;
@@ -199,12 +218,23 @@
     .notifshow {
         display: block;
     }
-    
+
+    @media only screen and (max-width: 800px) {
+        .menu {
+            display: none;
+        }
+        .menu a {
+            font-size: 16px;
+        }
+    }
 </style>
 
 </head>
 
 <header>
+    <div class="burgermenu">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
     <div>
         <div class='title'>Gadgets4U</div>
         <div class='account' onclick="userclick()"><i class="fas fa-user fa-2x"></i>
@@ -231,6 +261,7 @@
         <a href=''><i class="fas fa-building"></i> Suppliers</a>
         <a href=''><i class="fas fa-chart-bar"></i> Stock</a>
         <a href=''><i class="fas fa-shopping-cart"></i> Purchases</a>
+        <p style="padding-top: 240px;"> </p>
         <a href=''><i class="fas fa-question-circle"></i> FAQ</a>
         <a id="lmdmtoggle">
             <label class="switch">
@@ -255,6 +286,18 @@
     }
     function notifclick() {
     document.getElementById("notifdrop").classList.toggle("notifshow");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.account')) {
+            var dropdowns = document.getElementsByClassName("userdropcontent");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
     }
 </script>
 
