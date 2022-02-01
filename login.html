@@ -4,104 +4,16 @@
 
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gadgets4U</title>
-<link rel="icon" href="icon.jpeg"
+    <title>Gadgets4U</title>
+    <link rel="icon" href="icon.jpeg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-<style>
-body {
-    background-color: #333333;
-    font-family: Bebas Neue;
-}
-footer{
-    background-color: black;
-    color: white;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
-    font-family: Bebas Neue;
-    text-align: right;
-}
-img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 25px;
-}
-.loginform {
-    border-radius: 25px;
-    width: 25%;
-    background-color: #f0f0f0;
-    display: grid;
-    text-align: center;
-    padding: 5px;
-    border-width: 1px;
-    border: 2px solid black;
-    margin: auto;
-}
-input[type=text] {
-    width: 80%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    height: 25px;
-    font-family: Bebas Neue;
-}
-select {
-    width: 85%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    height: 25px;
-    font-family: Bebas Neue;
-}
-input[type=button] {
-    width: 50%;
-    padding: 5px;
-    text-align: center;
-    border-radius: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-family: Bebas Neue;
-    font-size: 24px;
-}
-.logodiv {
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.locationdiv {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.usernamediv {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.passworddiv {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-@media only screen and (max-width: 1200px) {
-    .loginform {
-        width: 45%;
-    }
-}
-@media only screen and (max-width: 800px) {
-    .loginform {
-        width: 70%;
-    }
-}
-</style>
+    <link rel="stylesheet" href="loginstyle.css">
 
 </head>
 
@@ -121,15 +33,15 @@ input[type=button] {
 
     <div class="usernamediv">
         <label>Username</label>
-        <input type="text" placeholder='Username...'>
+        <input type="text" name="username" id="login-username" placeholder='Username...'>
     </div>
 
     <div class="passworddiv">
         <label>Password</label>
-        <input type='text' placeholder="Password...">
+        <input type='text' name="password" id='login-password'placeholder="Password...">
     </div>
 
-    <input type="button" value="Login">
+    <input type="button" value="Login" id="login-button">
 </div>
 
 </body>
@@ -137,5 +49,9 @@ input[type=button] {
 <footer>
     <p style="padding-right: 15px; font-size: 18px;">2022 © Gadgets4U | By Arclight Developments</p>
 </footer>
+
+<script>
+
+</script>
 
 </html>
