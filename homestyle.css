@@ -25,6 +25,10 @@ footer {
     text-align: right;
     height: 55px;
 }
+.footertext {
+    padding-right: 15px;
+    font-size: 18px;
+}
 img {
     max-height: 100%;
     max-width: 100%;
@@ -213,43 +217,100 @@ input:checked + .slider:before {
     display: block;
 }
 .maincontainer {
-    float: left;
+    float: right;
     overflow: auto;
     width: 83%;
+    height: 100%;
+    margin-top: 50px;
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 .pagetitle {
     width: 100%;
-    margin-top: 50px;
     height: 50px;
     text-align: center;
     box-sizing: border-box;
     border: 1px solid black;
-    left: 17%;
+    font-size: 32px;
+    font-family: Bebas Neue;
+    background-color: black;
+    color: white;
 }
 .col1 {
-    margin-left: 17%;
-    width: 33%;
+    width: 24%;
+    height: 20vh;
     background-color: blue;
-    float: left;
-    height: 100%;
     box-sizing: border-box;
     border: 1px solid blue;
-    padding-left: 17%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
 }
 .col2 {
-    width: 33%;
-    height: 100%;
+    width: 24%;
+    height: 20vh;
     box-sizing: border-box;
-    float: left;
     border: 1px solid black;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
 }
 .col3 {
-    width: 33%;
+    width: 24%;
+    height: 20vh;
     background-color: red;
-    float: left;
-    height: 100%;
     box-sizing: border-box;
     border: 1px solid red;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+.col4 {
+    width: 24%;
+    height: 20vh;
+    background-color: grey;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1064px) {
+    .menu {
+        display: none;
+    }
+    .menu a {
+        font-size: 26px;
+    }
+    .maincontainer {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -258,5 +319,59 @@ input:checked + .slider:before {
     }
     .menu a {
         font-size: 16px;
+    }
+    .maincontainer {
+        width: 100%;
+    }
+    .col1 {
+        width: 45%;
+    }
+    .col2 {
+        width: 45%;
+    }
+    .col3 {
+        width: 45%;
+    }
+    .col4 {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .menu {
+        display: none;
+    }
+    .menu a {
+        font-size: 16px;
+    }
+    .maincontainer {
+        width: 100%;
+    }
+    .col1 {
+        width: 90%;
+    }
+    .col2 {
+        width: 90%;
+    }
+    .col3 {
+        width: 90%;
+    }
+    .col4 {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    header {
+        font-size: 14px;
+    }
+    .title {
+        font-size: 24px;
+    }
+    .footertext {
+        font-size: 12px;
+    }
+    .account {
+        font-size: 14px;
     }
 }
