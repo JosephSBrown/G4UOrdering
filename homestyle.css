@@ -13,6 +13,7 @@ header {
 body {
     background-color: white;
     color: black;
+    overflow: auto;
 }
 footer {
     background-color: black;
@@ -134,8 +135,6 @@ input:checked + .slider:before {
     padding-left: 15px;
     padding-right: 15px;
     color: white;
-    font-size: 16px;
-    border: none;
     cursor: pointer;
 }
 .notif {
@@ -219,12 +218,10 @@ input:checked + .slider:before {
 .maincontainer {
     float: right;
     overflow: auto;
-    width: 83%;
+    width: 82%;
     height: 100%;
     margin-top: 50px;
     text-align: center;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
 }
 .pagetitle {
     width: 100%;
@@ -236,13 +233,20 @@ input:checked + .slider:before {
     font-family: Bebas Neue;
     background-color: black;
     color: white;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.contentcontainer {
+    border: 3px solid black;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    margin: 10px;
 }
 .col1 {
     width: 24%;
-    height: 20vh;
-    background-color: blue;
+    background-color: grey;
+    color: white;
     box-sizing: border-box;
-    border: 1px solid blue;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -252,12 +256,16 @@ input:checked + .slider:before {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .col2 {
     width: 24%;
-    height: 20vh;
+    background-color: grey;
+    color: white;
     box-sizing: border-box;
-    border: 1px solid black;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -267,13 +275,16 @@ input:checked + .slider:before {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .col3 {
     width: 24%;
-    height: 20vh;
-    background-color: red;
+    background-color: grey;
+    color: white;
     box-sizing: border-box;
-    border: 1px solid red;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -283,13 +294,16 @@ input:checked + .slider:before {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 .col4 {
     width: 24%;
-    height: 20vh;
     background-color: grey;
+    color: white;
     box-sizing: border-box;
-    border: 1px solid grey;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
@@ -299,6 +313,83 @@ input:checked + .slider:before {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.col5 {
+    width: 24%;
+    background-color: grey;
+    color: white;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}.col6 {
+    width: 24%;
+    background-color: grey;
+    color: white;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}.col7 {
+    width: 24%;
+    background-color: grey;
+    color: white;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}.col8 {
+    width: 24%;
+    background-color: grey;
+    color: white;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 @media only screen and (max-width: 1064px) {
@@ -309,7 +400,7 @@ input:checked + .slider:before {
         font-size: 26px;
     }
     .maincontainer {
-        width: 100%;
+        width: 90%;
     }
 }
 
@@ -335,6 +426,18 @@ input:checked + .slider:before {
     .col4 {
         width: 45%;
     }
+    .col5 {
+        width: 45%;
+    }
+    .col6 {
+        width: 45%;
+    }
+    .col7 {
+        width: 45%;
+    }
+    .col8 {
+        width: 45%;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -357,6 +460,18 @@ input:checked + .slider:before {
         width: 90%;
     }
     .col4 {
+        width: 90%;
+    }
+    .col5 {
+        width: 90%;
+    }
+    .col6 {
+        width: 90%;
+    }
+    .col7 {
+        width: 90%;
+    }
+    .col8 {
         width: 90%;
     }
 }
