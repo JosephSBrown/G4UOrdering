@@ -26,8 +26,8 @@
 </head>
 
 <header>
-    <div class="burgermenu">
-        <i class="fas fa-bars fa-2x"></i>
+    <div class="burgermenu"  onclick="menuclick()">
+        <div><i class="fas fa-bars fa-2x"></i></div>
     </div>
     <div>
         <div class='title'>Gadgets4U</div>
@@ -50,7 +50,7 @@
 </header>
 
 <body>
-    <div class='menu'>
+    <div id="menu" class='menu'>
         <a><img src='logo.png'></a>
         <a href='' class='active'><i class="fas fa-tachometer-alt"></i> Dashboard</a>
         <a href=''><i class="far fa-file"></i> Orders</a>
@@ -121,6 +121,14 @@
     }
     function notifclick() {
     document.getElementById("notifdrop").classList.toggle("notifshow");
+    }
+    function menuclick() {
+        var menu = document.getElementById("menu")
+        if (menu.style.display == "none") {
+            menu.style.display = "block";
+        } else {
+            menu.style.display = "none";
+        }
     }
 </script>
 

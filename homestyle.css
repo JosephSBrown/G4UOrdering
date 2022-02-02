@@ -395,21 +395,23 @@ input:checked + .slider:before {
 @media only screen and (max-width: 1064px) {
     .menu {
         display: none;
+        width: 45%;
     }
     .menu a {
-        font-size: 26px;
+        font-size: 29px;
     }
     .maincontainer {
-        width: 90%;
+        width: 100%;
     }
 }
 
 @media only screen and (max-width: 800px) {
     .menu {
         display: none;
+        width: 45%;
     }
     .menu a {
-        font-size: 16px;
+        font-size: 26px;
     }
     .maincontainer {
         width: 100%;
@@ -443,9 +445,10 @@ input:checked + .slider:before {
 @media only screen and (max-width: 600px) {
     .menu {
         display: none;
+        width: 45%;
     }
     .menu a {
-        font-size: 16px;
+        font-size: 26px;
     }
     .maincontainer {
         width: 100%;
