@@ -14,3 +14,4 @@ document.getElementById("notifdrop").classList.toggle("notifshow");
 function menuclick(x) {
     x.classList.toggle("change");
 }
+

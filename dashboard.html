@@ -39,7 +39,7 @@
                 <a>StaffID: </a>
                 <a href=''>Account</a>
                 <a href=''>Settings</a>
-                <a href='login.html'>Log Out</a>
+                <a href='login.html' onclick="logout">Log Out</a>
             </div>
         </div>
         <div class='notif' onclick="notifclick()"><span class="badge">3</span><i class="far fa-bell fa-2x"></i>
@@ -53,22 +53,21 @@
 </header>
 
 <body>
-    <div id="menu" class='menu'>
-        <a><img src='logo.png'></a>
-        <a href='' class='active'><i class="fas fa-tachometer-alt"></i> Dashboard</a>
-        <a href=''><i class="far fa-file"></i> Orders</a>
-        <a href=''><i class="fas fa-building"></i> Suppliers</a>
-        <a href=''><i class="fas fa-chart-bar"></i> Stock</a>
-        <a href=''><i class="fas fa-shopping-cart"></i> Purchases</a>
-        <p style="padding-top: 240px;"> </p>
-        <a href=''><i class="fas fa-question-circle"></i> FAQ</a>
-        <a id="lmdmtoggle">
+    <ul id="menu" class='menu'>
+        <div><img src='logo.png'></div>
+        <li href='' class='active'><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+        <li href=''><div class="far fa-file"></div> Orders</li>
+        <li href=''><i class="fas fa-building"></i> Suppliers</li>
+        <li href=''><i class="fas fa-chart-bar"></i> Stock</li>
+        <li href=''><i class="fas fa-shopping-cart"></i> Purchases</li>
+        <li href=''><i class="fas fa-question-circle"></i> FAQ</li>
+        <li id="lmdmtoggle">
             <label class="switch">
                 <input type="checkbox" onclick="darkmode()">
                 <span class="slider round"></span>
             </label> Dark Mode
-        </a>
-    </div>
+        </li>
+    </ul>
     <div class="maincontainer">
         <div class="pagetitle">
             <div>Dashboard</div>
