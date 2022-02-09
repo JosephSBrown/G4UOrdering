@@ -9,7 +9,7 @@
     <title>Gadgets4U | Peterborough</title>
     <link rel="icon" href="icon.jpeg">
 
-<!-- Meta Tags for Providing Metadata Regarding the HelloStamford Website -->
+<!-- Meta Tags for Providing Metadata Regarding the G4U Application Website -->
     <meta charset="UTF-8"> <!-- Characters Used throughout the Document -->
     <meta name="description" content="HelloStamford is a website dedicated to providing the local information, for both locals and those intending to visit. "> <!-- Search Engine Page Description -->
     <meta name="keywords" content="Gadgets4U, Peterborough, Dashboard"> <!-- Keywords for SEO -->
@@ -22,12 +22,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="homestyle.css">
+    <script src="home.js"></script>
 
 </head>
 
 <header>
-    <div class="burgermenu"  onclick="menuclick()">
-        <div><i class="fas fa-bars fa-2x"></i></div>
+    <div class="burgermenu"  onclick="menuclick(this)">
+        <div class="menuline1"></div>
+        <div class="menuline2"></div>
+        <div class="menuline3"></div>
     </div>
     <div>
         <div class='title'>Gadgets4U</div>
@@ -110,26 +113,5 @@
 <footer id="footer">
     <div class="footertext"><p>2022 © Gadgets4U | By Arclight Developments</p></div>
 </footer>
-
-<script>
-    function darkmode() {
-        var body = document.body;
-        body.classList.toggle('dark-mode');
-    }
-    function userclick() {
-    document.getElementById("userdrop").classList.toggle("usershow");
-    }
-    function notifclick() {
-    document.getElementById("notifdrop").classList.toggle("notifshow");
-    }
-    function menuclick() {
-        var menu = document.getElementById("menu")
-        if (menu.style.display == "none") {
-            menu.style.display = "block";
-        } else {
-            menu.style.display = "none";
-        }
-    }
-</script>
 
 </html>
