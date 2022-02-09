@@ -92,6 +92,12 @@ li .active {
     background-color: #595959;
     color: white;
 }
+.menupic {
+    display: block;
+    width: 95%;
+    height: auto;
+    text-align: center;
+}
 
 /* -----Switch----- */
 
@@ -438,6 +444,9 @@ input:checked + .slider:before {
         display: none;
         width: 45%;
     }
+    .menupic {
+        display: none;
+    }
     .li {
         font-size: 29px;
     }
@@ -450,6 +459,9 @@ input:checked + .slider:before {
     .menu {
         display: none;
         width: 45%;
+    }
+    .menupic {
+        display: none;
     }
     .li {
         font-size: 26px;
@@ -487,6 +499,9 @@ input:checked + .slider:before {
     .menu {
         display: none;
         width: 45%;
+    }
+    .menupic {
+        display: none;
     }
     .li {
         font-size: 26px;
