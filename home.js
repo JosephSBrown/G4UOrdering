@@ -13,5 +13,28 @@ document.getElementById("notifdrop").classList.toggle("notifshow");
 
 function menuclick(x) {
     x.classList.toggle("change");
+    document.getElementById("menu").classList.toggle("menushow");
 }
 
+  window.onclick = function(event) {
+    if (!event.target.matches('.notif')) {
+      var dropdowns = document.getElementsByClassName("notifdropcontent");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('notifshow')) {
+          openDropdown.classList.remove('notifshow');
+        }
+      }
+    }
+    if (!event.target.matches('.account')) {
+        var dropdowns = document.getElementsByClassName("userdropcontent");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('usershow')) {
+            openDropdown.classList.remove('usershow');
+          }
+        }
+      }
+  }
