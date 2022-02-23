@@ -1,0 +1,1 @@
+export var MainUrl = "http://192.168.65.127:3000";
