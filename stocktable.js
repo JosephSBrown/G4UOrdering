@@ -4,13 +4,14 @@ var RanOnce = false;
 
 var table = document.getElementById("StockTable");
 
-setInterval(() => {
-    var request = new XMLHttpRequest();
+var request = new XMLHttpRequest();
 
+function OpenRequest() {
     request.open('GET',
         `${MainUrl}/loadproduct`,
         true
     );
+}
 
     request.onload = function () {
         var data = JSON.parse(this.response)
@@ -24,8 +25,8 @@ setInterval(() => {
         }
 
         else {
-            for (var i = dataCount; i > 1; i--) {
-                table.deleteRow(i);
+            for (var i = table.rows.length -1; i > 0; i--) {
+                    table.deleteRow(i);
             }
         }    
 
@@ -46,16 +47,28 @@ setInterval(() => {
             image.className = 'imagescale'
 
             var ProductImage = document.createElement("td")
+            ProductImage.className = 'productimage'
             ProductImage.appendChild(image)
 
+            var ProductType = document.createElement("td")
+            ProductType.textContent = product.Type
+
+            row.appendChild(ProductImage);
             row.appendChild(ProductId);
             row.appendChild(ProductName);
+            row.appendChild(ProductType);
             row.appendChild(ProductStock);
-            row.appendChild(ProductImage);
 
             table.appendChild(row);
         });
     }
 
+setInterval(() => {
+
+    OpenRequest()
+
     request.send();
 }, 5000)
+
+OpenRequest()
+request.send()

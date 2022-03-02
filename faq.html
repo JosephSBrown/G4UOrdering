@@ -12,7 +12,7 @@
 <!-- Meta Tags for Providing Metadata Regarding the G4U Application Website -->
     <meta charset="UTF-8"> <!-- Characters Used throughout the Document -->
     <meta name="description" content="HelloStamford is a website dedicated to providing the local information, for both locals and those intending to visit. "> <!-- Search Engine Page Description -->
-    <meta name="keywords" content="Gadgets4U, Peterborough, Stock"> <!-- Keywords for SEO -->
+    <meta name="keywords" content="Gadgets4U, Peterborough, Dashboard"> <!-- Keywords for SEO -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport in order to ensure good optimisation on All Devices -->
     <meta name="author" content="Joseph Brown"> <!-- Page/Content Author -->
 
@@ -21,8 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="stocklanding.css">
-    <script src="stocklanding.js"></script>
+    <link rel="stylesheet" href="faq.css">
+    
 
 </head>
 
@@ -58,8 +58,8 @@
         <li><a href="dashboard.html"><div class="fas fa-tachometer-alt"></div> Dashboard</a></li>
         <li><a href='orderlanding.html'><div class="far fa-file"></div> Orders</a></li>
         <li><a href='supplier.html'><div class="fas fa-building"></div> Suppliers</a></li>
-        <li class="active"><a href=''><div class="fas fa-chart-bar"></div> Stock</a></li>  
-        <li><a href='faq.html'><div class="fas fa-question-circle"></div> FAQ</a></li>
+        <li><a href='stocklanding.html'><div class="fas fa-chart-bar"></div> Stock</a></li>  
+        <li class="active"><a href=""><div class="fas fa-question-circle"></div> FAQ</a></li>
         <li><a href='admindash.html'><div class="fas fa-user-group"></div> Admin</a></li>
         <li id="lmdmtoggle">
             <label class="switch">
@@ -70,23 +70,12 @@
     </ul>
     <div class="maincontainer">
         <div class="pagetitle">
-            <div>Stock</div>
+            <div>FAQ</div>
         </div>
-        <div class="contentcontainer" onclick="location.href='stock.html?selection=toys';">
-            <div class="col1 card ripple">
-                <div><i class="fa-solid fa-puzzle-piece fa-2x"></i></div>
-                <div>Toys</div>
-            </div>
-            <div class="col2 card ripple" onclick="location.href='stock.html?selection=gadgets';">
-                <div><i class="fa-solid fa-mobile-screen-button fa-2x"></i></div>
-                <div>Gadgets</div>
-            </div>
-            <div class="col3 card ripple" onclick="location.href='stock.html';">
-                <div><i class="fa-solid fa-certificate fa-2x"></i></div>
-                <div>View All</div>
-            </div>
+        <div id='cardholder' class="contentcontainer" onload="append()">
         </div>
     </div>
+    <script type='module' src="generatefaq.js"></script>
 </body>
 
 </html>

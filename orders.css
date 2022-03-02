@@ -69,7 +69,7 @@ img {
 .menu {
     width: 17%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     left: 0px;
     top: 0px;
     background-color: black;
@@ -291,67 +291,6 @@ input:checked + .slider:before {
     border-top-left-radius: 25px;
     margin: 10px;
 }
-
-/* Columns */
-
-.col1 {
-    width: 30%;
-    background-color: grey;
-    color: white;
-    box-sizing: border-box;
-    display: inline-block;
-    border-radius: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    font-family: Bebas Neue;
-    font-size: 40px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-.col2 {
-    width: 30%;
-    background-color: grey;
-    color: white;
-    box-sizing: border-box;
-    display: inline-block;
-    border-radius: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    font-family: Bebas Neue;
-    font-size: 40px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-.col3 {
-    width: 30%;
-    background-color: grey;
-    color: white;
-    box-sizing: border-box;
-    display: inline-block;
-    border-radius: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    cursor: pointer;
-    font-family: Bebas Neue;
-    font-size: 40px;
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-    transition: 0.3s;
-}
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
-}
 .ripple {
     background-position: center;
     transition: background 0.6s;
@@ -364,7 +303,26 @@ input:checked + .slider:before {
     background-size: 100%;
     transition: background 0s;
 }
-
+.orderhead {
+    text-align: center;
+    width: 100%;
+    font-family: Bebas Neue;
+    font-size: 24px;
+}
+.imagescale {
+    object-fit: fill;
+    max-width: 200px;
+    max-height: 200px;
+}
+thead {
+    border-bottom: solid 1px black;
+}
+th:nth-child(even), td:nth-child(even) {
+    background-color: rgb(152, 219, 219);
+}
+th {
+    border-bottom: 2px solid black;
+}
 /* Media Queries */
 
 @media only screen and (max-width: 1064px) {
@@ -405,30 +363,6 @@ input:checked + .slider:before {
     .maincontainer {
         width: 100%;
     }
-    .col1 {
-        width: 45%;
-    }
-    .col2 {
-        width: 45%;
-    }
-    .col3 {
-        width: 45%;
-    }
-    .col4 {
-        width: 45%;
-    }
-    .col5 {
-        width: 45%;
-    }
-    .col6 {
-        width: 45%;
-    }
-    .col7 {
-        width: 45%;
-    }
-    .col8 {
-        width: 45%;
-    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -449,29 +383,10 @@ input:checked + .slider:before {
     .maincontainer {
         width: 100%;
     }
-    .col1 {
-        width: 90%;
-    }
-    .col2 {
-        width: 90%;
-    }
-    .col3 {
-        width: 90%;
-    }
-    .col4 {
-        width: 90%;
-    }
-    .col5 {
-        width: 90%;
-    }
-    .col6 {
-        width: 90%;
-    }
-    .col7 {
-        width: 90%;
-    }
-    .col8 {
-        width: 90%;
+    .imagescale {
+        max-width: 150px;
+        max-height: 100px;
+        object-fit: fill;
     }
 }
 
@@ -490,5 +405,10 @@ input:checked + .slider:before {
     }
     li {
         font-size: 18px;
+    }
+    .imagescale {
+        max-width: 100px;
+        max-height: 66px;
+        object-fit: fill;
     }
 }

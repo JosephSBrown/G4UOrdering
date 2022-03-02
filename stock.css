@@ -104,9 +104,10 @@ li .active {
 }
 .menupic {
     display: block;
-    width: 95%;
+    width: 70%;
     height: auto;
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* -----Switch----- */
@@ -308,15 +309,14 @@ input:checked + .slider:before {
     font-family: Bebas Neue;
     font-size: 24px;
 }
-table {
-    width: 100%;
-}
 .imagescale {
     object-fit: fill;
-    max-width: 300px;
+    max-width: 200px;
     max-height: 200px;
 }
-
+thead {
+    border-bottom: solid 1px black;
+}
 /* Media Queries */
 
 @media only screen and (max-width: 1064px) {
