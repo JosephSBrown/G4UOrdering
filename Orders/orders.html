@@ -23,6 +23,7 @@
 
     <link rel="stylesheet" href="orders.css">
     <script src="orders.js"></script>
+    <script type="module" src="../tokenset.js"></script>
 
 </head>
 
@@ -36,8 +37,8 @@
         <div class='title'>Gadgets4U</div>
         <div class='account' onclick="userclick()"><i class="fas fa-user fa-2x"></i>
             <div id='userdrop' class='userdropcontent'>
-                <a>StaffID: </a>
-                <a href=''>Account</a>
+                <a id="token">StaffID: </a>
+                <a href='../Account/account.html'>Account</a>
                 <a href=''>Settings</a>
                 <a href='../Login/login.html' onclick="logout">Log Out</a>
             </div>

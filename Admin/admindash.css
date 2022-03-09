@@ -98,9 +98,6 @@ li:hover {
 li.li-no-hover:hover{
     background-color: transparent;
 }
-li a.li-no-hover:hover {
-    background-color: transparent;
-}
 li .active {
     background-color: #595959;
     color: white;

@@ -27,6 +27,15 @@ input[type=text] {
     height: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+input[type=password] {
+    width: 80%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 select {
     width: 85%;
     text-align: center;
