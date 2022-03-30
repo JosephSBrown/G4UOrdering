@@ -1,81 +1,158 @@
-import {MainUrl} from "./mainurl.js";
+import {MainUrl} from "../mainurl.js";
+import {GetCookie} from "../logincookie.js"
 
-var RanOnce = false;
+window.onload = function() {
+    var staffId = document.getElementById("staffId").value;
+    var currentdate = new Date(); 
+    var datetime = ('0' + currentdate.getDate()).slice(-2) + "/"
+                    + ('0' +(currentdate.getMonth()+1)).slice(-2)  + "/" 
+                    + ('0' + currentdate.getFullYear()).slice(-2) + " @ "  
+                    + ('0' + currentdate.getHours()).slice(-2) + ":"  
+                    + ('0' + currentdate.getMinutes()).slice(-2) + ":" 
+                    + ('0' + currentdate.getSeconds()).slice(-2);
+    var quantity = document.getElementById("quantity").value;
+    document.getElementById("datetime").value = datetime;    
+}
 
-var staffId = document.getElementById("staffId").value;
-var currentdate = new Date(); 
-var datetime = "Last Sync: " + currentdate.getDate() + "/"
-                + (currentdate.getMonth()+1)  + "/" 
-                + currentdate.getFullYear() + " @ "  
-                + currentdate.getHours() + ":"  
-                + currentdate.getMinutes() + ":" 
-                + currentdate.getSeconds();
-var orderNo = document.getElementById("orderNo").value;
-var quantity = document.getElementById("quantity").value;
-var status = document.getElementById("status").value;
-var productId = document.getElementById("productId").value;
-var productName = document.getElementById("productName").value;
-var supplierId = document.getElementById("supplierId").value;
-var supplierName = document.getElementById("supplierName").value;
+var productName = document.getElementById("productName");
 
-setInterval(() => {
-    var request = new XMLHttpRequest();
+var Fulljson = []
 
-    request.open('GET',
-        `${MainUrl}/supplier`,
+var request = new XMLHttpRequest();
+
+function OpenRequest() {
+    request.open('POST',
+        `${MainUrl}/createorder`,
         true
     );
 
-    request.onload = function () {
-        var data = JSON.parse(this.response)
+    request.setRequestHeader("Content-Type", "application/json");
+}
 
-        var dataCount = data.length +1;
+var submit = document.getElementById("submit")
+submit.onclick = function() {
+    var OrderTable = {
+        StaffId: GetCookie('loggedin'),
+        Products: [
 
-        if (!RanOnce) {
-
-            RanOnce = true;
-
-        }
-
-        else {
-            for (var i = table.rows.length -1; i > 0; i--) {
-                    table.deleteRow(i);
+        ]
+    }
+    productTable.forEach(product => {
+        if (product) {
+            if (product.productCode && product.supplierId && product.quantity) {
+                OrderTable.Products.push({
+                    ProductCode: product.productCode,
+                    SupplierId: product.supplierId,
+                    Quantity: product.quantity
+                })
             }
-        }    
+        }
+    })
 
-        data.forEach(supplier => {
-            var row = document.createElement("tr");
+    OpenRequest()
+    var data = JSON.stringify(OrderTable);
+    request.send(data)
+}
 
-            var SupplierId = document.createElement("td")
-            SupplierId.textContent = supplier.Code
-            SupplierId.className = 'productimage'
+var request2 = new XMLHttpRequest();
 
-            var SupplierName = document.createElement("td")
-            SupplierName.textContent = supplier.Name
+    request2.open("GET",
+        `${MainUrl}/loadproductsupplier`,
+        true
+    )
 
-            var SupplierNumber = document.createElement("td")
-            SupplierNumber.textContent = supplier.PhoneNumber
+    request2.onload = function() {
+        var data = JSON.parse(this.response)
+            Fulljson = data
+            data.forEach(product => {
+                var productoption = document.createElement("option");
+                productoption.text = product.Name;
+                productoption.value = product.Code
 
-            //var image = document.createElement("img")
-            //image.src = `data:image/png;base64,${product.Image}`
-            //image.className = 'imagescale'
-
-            //var ProductImage = document.createElement("td")
-            //ProductImage.className = 'productimage'
-            //ProductImage.appendChild(image)
-
-            var SupplierEmail = document.createElement("td")
-            SupplierEmail.textContent = supplier.Email
-
-            //row.appendChild(ProductImage);
-            row.appendChild(SupplierId);
-            row.appendChild(SupplierName);
-            row.appendChild(SupplierNumber);
-            row.appendChild(SupplierEmail);
-
-            table.appendChild(row);
-        });
+                productName.appendChild(productoption);
+            });
+            
     }
 
-    request.send();
-}, 5000)
+request2.send()
+
+var productTable = []
+
+var add = document.getElementById("plus")
+add.onclick = function() {
+    var clone = document.getElementById("orderinfo").cloneNode(true)
+    clone.id = Math.random()
+    clone.style.display = "block"
+    document.getElementById("ubertable").appendChild(clone)
+
+    var quantity = null
+    var supp = null
+    var product = null
+
+    var descendants = clone.querySelectorAll("*")
+    descendants.forEach(desc => {
+        if (desc.className.includes("quantity")) {
+            quantity = desc
+        }
+        else if (desc.className == "supplier") {
+            supp = desc
+        }
+        else if (desc.className == "product") {
+            product = desc
+        }
+    })
+
+    var index = productTable.length
+    clone.className = index
+    productTable[index] = {
+        productCode: null,
+        supplierId: null,
+        quantity: null,
+    }
+
+    product.onchange = function(selectObject) {
+        var procode = selectObject.target.value
+        if (procode) {
+            for (var i = supp.options.length -1; i > 0; i--) {
+                supp.remove(i);
+            }
+            Fulljson.forEach(product => {
+                if (product.Code == procode) {
+                    product.Suppliers.forEach(supplier => {
+                        var supplieroption = document.createElement("option");
+                        supplieroption.text = supplier.Name;
+                        supplieroption.value = supplier.Code
+    
+                        supp.appendChild(supplieroption);
+                    })
+                } 
+            })
+        }
+
+        productTable[index].productCode = procode
+        productTable[index].supplierId = null
+    }
+
+    supp.onchange = function(selectObject) {
+        var procode = selectObject.target.value
+        productTable[index].supplierId = procode
+    }
+
+    quantity.onchange = function(selectObject) {
+        var procode = selectObject.target.value
+        productTable[index].quantity = procode
+    }
+    console.log(productTable)
+    
+}
+
+var minus = document.getElementById("minus")
+minus.onclick = function() {
+    var select = document.getElementById("ubertable")
+    var lastChild = select.lastChild
+    var index = parseInt(lastChild.className)
+    if (index) {
+        productTable[index] = null
+        select.removeChild(lastChild)
+    } 
+}

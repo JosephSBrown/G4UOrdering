@@ -21,8 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="stock2.css">
-    <script src="stock.js"></script>
+    <link rel="stylesheet" href="createstaff.css">
+    <script src="createstaff2.js"></script>
     <script type="module" src="../tokenset.js"></script>
 
 </head>
@@ -59,7 +59,7 @@
         <li><a href="../Dashboard/dashboard.html"><div class="fas fa-tachometer-alt"></div> Dashboard</a></li>
         <li><a href='../Orders/orderlanding.html'><div class="far fa-file"></div> Orders</a></li>
         <li><a href='../Suppliers/supplier.html'><div class="fas fa-building"></div> Suppliers</a></li>
-        <li class="active"><a href='stocklanding.html'><div class="fas fa-chart-bar"></div> Stock</a></li>  
+        <li><a href='../Stock/stocklanding.html'><div class="fas fa-chart-bar"></div> Stock</a></li>  
         <li><a href='../Faq/faq.html'><div class="fas fa-question-circle"></div> FAQ</a></li>
         <li id="admintab"><a href='../Admin/admindash.html'><div class="fas fa-user-group"></div> Admin</a></li>
         <li id="lmdmtoggle">
@@ -71,23 +71,72 @@
     </ul>
     <div class="maincontainer">
         <div class="pagetitle">
-            <div>View Stock</div>
+            <div>Create Staff Entry</div>
         </div>
-        <div class="contentcontainer">
-            <table id="StockTable" class="stockhead">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Product ID</th>
-                        <th>Product Name</th>
-                        <th>Product Type</th>
-                        <th>Stock Level</th>
-                    </tr>
-                </thead>
-            </table>
+        <div class="contentcontainer" id="contentcontainer">
+            <div id="stafftable">
+                <div>
+                    <label class="font">Managing Staff ID</label>
+                    <input type="text" id="staffId" readonly>
+                </div>
+                <div>
+                    <label class="font">Creation Date</label>
+                    <input type="text" id="datetime" readonly>
+                </div>
+                <div id="staffinfo">
+                    <div>
+                        <label class="font">Create Staff First Name</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="font">Create Staff Last Name</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="font">Create Staff ID</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="font">Department</label>
+                        <select class="font">
+                            <option>Select a Department...</option>
+                            <option>Toys and Gadgets</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="font">Role</label>
+                        <select class="font">
+                            <option>Select a Role...</option>
+                            <option>Sales Assistant</option>
+                            <option>Senior Sales Person</option>
+                            <option>Manager</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="font">Email</label>
+                        <input type="text">
+                        <input class="font" value="@g4u.com" style="width: 100px" readonly>
+                    </div>
+                    <div>
+                        <label class="font">Phone Number</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="font">Create Password</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label class="font">Confirm Password</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <input type="submit" id="submit">
+            </div>
         </div>
     </div>
-    <script type="Module" src="stocktable.js"></script>
+    <script type="Module" src="createstaff.js"></script>
 </body>
 
 </html>

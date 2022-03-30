@@ -16,6 +16,13 @@ catch (error) {
     console.log(error)
 }
 
+try {
+    document.getElementById('staffId').value = `${GetCookie('loggedin')}`
+}
+catch (error) {
+    console.log(error)
+}
+
 if (parseInt(GetCookie('permissionlevel')) > 0) {
     document.getElementById('admintab').hidden = false;
     console.log('idc')

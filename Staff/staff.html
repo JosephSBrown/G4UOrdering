@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Gadgets4U | Peterborough</title>
-    <link rel="icon" href="../Images/logo.png">
+    <link rel="icon" href="../Images//logo.png">
 
 <!-- Meta Tags for Providing Metadata Regarding the G4U Application Website -->
     <meta charset="UTF-8"> <!-- Characters Used throughout the Document -->
@@ -21,8 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="stock2.css">
-    <script src="stock.js"></script>
+    <link rel="stylesheet" href="staff.css">
+    <script src="staff.js"></script>
     <script type="module" src="../tokenset.js"></script>
 
 </head>
@@ -39,7 +39,7 @@
             <div id='userdrop' class='userdropcontent'>
                 <a id="token">StaffID: </a>
                 <a href='../Account/account.html'>Account</a>
-                <a href='settings.html'>Settings</a>
+                <a href=''>Settings</a>
                 <a href='../Login/login.html' onclick="logout">Log Out</a>
             </div>
         </div>
@@ -57,9 +57,9 @@
     <ul id="menu" class='menu'>
         <li class="li-no-hover"><img src='../Images/logo.png' class="menupic"></li>
         <li><a href="../Dashboard/dashboard.html"><div class="fas fa-tachometer-alt"></div> Dashboard</a></li>
-        <li><a href='../Orders/orderlanding.html'><div class="far fa-file"></div> Orders</a></li>
+        <li class="active"><a href='../Orders/orderlanding.html'><div class="far fa-file"></div> Orders</a></li>
         <li><a href='../Suppliers/supplier.html'><div class="fas fa-building"></div> Suppliers</a></li>
-        <li class="active"><a href='stocklanding.html'><div class="fas fa-chart-bar"></div> Stock</a></li>  
+        <li><a href='../Stock/stocklanding.html'><div class="fas fa-chart-bar"></div> Stock</a></li>  
         <li><a href='../Faq/faq.html'><div class="fas fa-question-circle"></div> FAQ</a></li>
         <li id="admintab"><a href='../Admin/admindash.html'><div class="fas fa-user-group"></div> Admin</a></li>
         <li id="lmdmtoggle">
@@ -71,23 +71,22 @@
     </ul>
     <div class="maincontainer">
         <div class="pagetitle">
-            <div>View Stock</div>
+            <div>View Orders</div>
         </div>
         <div class="contentcontainer">
-            <table id="StockTable" class="stockhead">
+            <table id="OrderTable" class="orderhead">
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Product ID</th>
-                        <th>Product Name</th>
-                        <th>Product Type</th>
-                        <th>Stock Level</th>
+                        <th>Staff ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Department</th>
                     </tr>
                 </thead>
             </table>
         </div>
     </div>
-    <script type="Module" src="stocktable.js"></script>
+    <script type="Module" src="stafftable.js"></script>
 </body>
 
 </html>
