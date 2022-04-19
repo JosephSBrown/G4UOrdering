@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gadgets4U | Peterborough</title>
+    <link rel="icon" href="../Images/logo.png">
+
+<!-- Meta Tags for Providing Metadata Regarding the G4U Application Website -->
+    <meta charset="UTF-8"> <!-- Characters Used throughout the Document -->
+    <meta name="description" content="HelloStamford is a website dedicated to providing the local information, for both locals and those intending to visit. "> <!-- Search Engine Page Description -->
+    <meta name="keywords" content="Gadgets4U, Peterborough, Stock"> <!-- Keywords for SEO -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport in order to ensure good optimisation on All Devices -->
+    <meta name="author" content="Joseph Brown"> <!-- Page/Content Author -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="editsupplierlanding.css">
+    <script src="editsupplierlanding.js"></script>
+    <script type="module" src="../tokenset.js"></script>
+
+</head>
+
+<header>
+    <div class="burgermenu"  onclick="menuclick(this)">
+        <div class="menuline1"></div>
+        <div class="menuline2"></div>
+        <div class="menuline3"></div>
+    </div>
+    <div>
+        <div class='title'>Gadgets4U</div>
+        <div class='account' onclick="userclick()"><i class="fas fa-user fa-2x"></i>
+            <div id='userdrop' class='userdropcontent'>
+                <a id="token">StaffID: </a>
+                <a href='../Account/account.html'>Account</a>
+                <a href=''>Settings</a>
+                <a href='../Login/login.html' onclick="logout">Log Out</a>
+            </div>
+        </div>
+        <div class='notif' onclick="notifclick()"><span class="badge">3</span><i class="far fa-bell fa-2x"></i>
+            <div id='notifdrop' class='notifdropcontent'>
+                <a href=''>Funko Pop Olaf's Stock Has Fallen Below the Minimum Order Amount</a>
+                <a href=''>Notification 2</a>
+                <a href=''>Notification 3</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <ul id="menu" class='menu'>
+        <li class="li-no-hover"><img src='../Images/logo.png' class="menupic"></li>
+        <li><a href="../Dashboard/dashboard.html"><div class="fas fa-tachometer-alt"></div> Dashboard</a></li>
+        <li class="active"><a href=''><div class="far fa-file"></div> Orders</a></li>
+        <li><a href='../Suppliers/supplier.html'><div class="fas fa-building"></div> Suppliers</a></li>
+        <li><a href='../Stock/stocklanding.html'><div class="fas fa-chart-bar"></div> Stock</a></li>  
+        <li><a href='../Faq/faq.html'><div class="fas fa-question-circle"></div> FAQ</a></li>
+        <li id="admintab"><a href='../Admin/admindash.html'><div class="fas fa-user-group"></div> Admin</a></li>
+        <li id="lmdmtoggle">
+            <label class="switch">
+                <input type="checkbox" onclick="darkmode()">
+                <span class="slider round"></span>
+            </label> Dark Mode
+        </li>
+    </ul>
+    <div class="maincontainer">
+        <div class="pagetitle">
+            <div>Edit Suppliers</div>
+        </div>
+        <div class="contentcontainer">
+            <div class="col1 card ripple" onclick="location.href='createsupplier.html'">
+                <div><i class="fa-solid fa-plus fa-2x"></i></div>
+                <div>Create Supplier</div>
+            </div>
+            <div class="col2 card ripple" onclick="location.href='editsupplier.html'">
+                <div><i class="fa-solid fa-magnifying-glass fa-2x"></i></div>
+                <div>View and Edit Suppliers</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
