@@ -43,7 +43,7 @@
                 <a href='../Login/login.html' onclick="logout">Log Out</a>
             </div>
         </div>
-        <div class='notif' onclick="notifclick()"><span class="badge">3</span><i class="far fa-bell fa-2x"></i>
+        <div class='notif' onclick="notifclick()"><span id="notifno" class="badge"></span><i class="far fa-bell fa-2x"></i>
             <div id='notifdrop' class='notifdropcontent'>
                 <ul id="notif-menu">
                     <li class="notiflist">Notifications</li>
@@ -109,5 +109,7 @@
         </div>
     </div>
 </body>
+
+<script type="Module" src="../notifications.js"></script>
 
 </html>

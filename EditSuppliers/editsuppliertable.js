@@ -58,6 +58,20 @@ function OpenRequest() {
             row.appendChild(Delete);
 
             table.appendChild(row);
+
+            Button.onclick = function() {
+                var request2 = new XMLHttpRequest()
+                var data = {
+                    SupplierId: supplier.Code,
+
+                }
+                data = JSON.stringify(data)
+                var url = `${MainUrl}/deletesupplier`
+                url = `${url}?data=`+encodeURIComponent(data)
+                request2.open("GET", url, true)
+                request2.setRequestHeader("Content-Type", "application/json")
+                request2.send()
+            }
         });
     }
 
@@ -65,7 +79,7 @@ setInterval(() => {
     OpenRequest()
 
     request.send();
-}, 5000)
+}, 1000)
 
 OpenRequest()
 request.send()

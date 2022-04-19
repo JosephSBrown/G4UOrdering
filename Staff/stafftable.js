@@ -8,7 +8,7 @@ var request = new XMLHttpRequest();
 
 function OpenRequest() {
     request.open('GET',
-        `${MainUrl}/loadorder`,
+        `${MainUrl}/loadstaff`,
         true
     );
 }
@@ -34,11 +34,11 @@ function OpenRequest() {
         data.forEach(product => {
             var row = document.createElement("tr");
 
-            var OrderNo = document.createElement("td")
-            OrderNo.textContent = product.OrderNumber
+            var EmployeeId = document.createElement("td")
+            EmployeeId.textContent = product.EmployeeId
 
-            var OrderDate = document.createElement("td");
-            var date = new Date(product.DateSent);
+            var JoinDate = document.createElement("td");
+            var date = new Date(product.JoinDate);
             var day = date.getDate().toString();
             var month = (date.getMonth() +1).toString();
             month = month.length > 1 ? month: '0' + month;
@@ -50,27 +50,31 @@ function OpenRequest() {
             var seconds = date.getSeconds().toString();
             seconds = seconds.length > 1 ? seconds: '0' + seconds;
             
-            if (product.DateSent){
-                OrderDate.textContent = (day+"/"+month+"/"+year+" "+hour+":"+minutes+":"+seconds);
+            if (product.JoinDate){
+                JoinDate.textContent = (day+"/"+month+"/"+year+" "+hour+":"+minutes+":"+seconds);
             }
             else {
-                OrderDate.textContent = 'No Date'
+                JoinDate.textContent = 'No Date'
             }
 
-            var StaffID = document.createElement("td")
-            StaffID.textContent = product.StaffId
+            var Name = document.createElement("td")
+            Name.textContent = `${product.Title} ${product.FirstName} ${product.LastName}`
 
-            var OrderStatus = document.createElement("td")
-            OrderStatus.textContent = product.Status
+            var phone = document.createElement("td")
+            phone.textContent = product.PhoneNumber
 
-            var OrderQuantity = document.createElement("td")
-            OrderQuantity.textContent = product.Quantity
+            var email = document.createElement("td")
+            email.textContent = product.WorkEmail
 
-            row.appendChild(OrderNo);
-            row.appendChild(OrderDate);
-            row.appendChild(StaffID);
-            row.appendChild(OrderStatus);
-            row.appendChild(OrderQuantity);
+            var role = document.createElement("td")
+            role.textContent = product.JobTitle
+
+            row.appendChild(EmployeeId);
+            row.appendChild(Name);
+            row.appendChild(role);
+            row.appendChild(JoinDate);
+            row.appendChild(email);
+            row.appendChild(phone);
 
             table.appendChild(row);
         });

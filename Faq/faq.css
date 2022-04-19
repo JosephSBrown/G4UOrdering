@@ -308,7 +308,7 @@ input:checked + .slider:before {
     margin-right: 10px;
     cursor: pointer;
     font-family: Bebas Neue;
-    font-size: 40px;
+    font-size: 26px;
     padding-top: 5%;
     padding-bottom: 5%;
 }
@@ -354,6 +354,8 @@ input:checked + .slider:before {
     margin: 50px;
     border-radius: 50px;
     cursor: pointer;
+    z-index: 2;
+    background-color: white;
 }
 .chatbox {
     border: solid 3px black;
