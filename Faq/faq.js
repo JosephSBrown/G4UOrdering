@@ -16,6 +16,12 @@ function menuclick(x) {
     document.getElementById("menu").classList.toggle("menushow");
 }
 
+function chatshow() {
+  document.getElementById("chatbox").classList.toggle("chat-show");
+  document.getElementById("chatbubble").classList.toggle("spin");
+  document.getElementById("input").classList.toggle("chat-show");
+}
+
   window.onclick = function(event) {
     if (!event.target.matches('.notif')) {
       var dropdowns = document.getElementsByClassName("notifdropcontent");

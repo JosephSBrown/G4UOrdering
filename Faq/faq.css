@@ -344,6 +344,78 @@ input:checked + .slider:before {
     background-size: 100%;
     transition: background 0s;
 }
+.chatbubble {
+    border: solid 3px black;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    width: 75px;
+    height: 75px;
+    margin: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.chatbox {
+    border: solid 3px black;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    margin-bottom: 128px;
+    margin-right: 75px;
+    height: 400px;
+    width: 300px;
+    border-radius: 25px;
+    background-color: grey;
+    display: none;
+}
+.chatinput {
+    border: black 2px solid;
+    width: 280px;
+    height: 20px;
+    bottom: 10px;
+    position: fixed;
+    margin-right: 80px;
+    border-radius: 25px;
+    font-family: Bebas Neue;
+    padding: 5px;
+    background-color: white;
+}
+.chattext {
+    width: 280px;
+    border: solid black 2px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    margin-top: 10px;
+    border-radius: 25px;
+    background-color: white;
+}
+.chattitle {
+    font-family: Bebas Neue;
+    margin: 10px;
+    font-size: 22px;
+    color: white;
+}
+.icon {
+    margin-top: 22px
+}
+.chat-show {
+    display: block;
+}
+.spin {
+    animation-name: spin;
+    animation-duration: 600ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear; 
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
 
 /* Media Queries */
 
